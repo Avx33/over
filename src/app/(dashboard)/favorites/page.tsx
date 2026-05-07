@@ -26,7 +26,7 @@ export default async function FavoritesPage() {
     .order("created_at", { ascending: false });
 
   const universities = favorites?.map((f) => f.university).filter(Boolean) ?? [];
-  const favoriteIds = favorites?.map((f) => (f.university as { id: string })?.id).filter(Boolean) ?? [];
+  const favoriteIds = favorites?.map((f: any) => f.university?.id).filter(Boolean) ?? [];
 
   return (
     <div className="space-y-6 animate-fade-in">
